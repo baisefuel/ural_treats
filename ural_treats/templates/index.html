@@ -15,7 +15,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bellota+Text:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href={% static 'css/style.css' %}>
 
     <title>SPORT SHOP URAL</title>
 </head>
@@ -30,7 +30,7 @@
         </div>
         <nav class="main-nav">
             <p class="logo">
-                <img width="86" height="90" src="img/logo.svg" alt="логотип спорт магазина урал">
+                <img width="86" height="90" src={% static 'img/logo.svg' %} alt="логотип спорт магазина урал">
             </p>
             <ul class="site-nav">
                 <li class="site-nav-item">
@@ -52,22 +52,22 @@
             <ul class="toolbar-nav">
                 <li class="toolbar-nav-item">
                     <a href="#">
-                        <img width="24" height="24" src="img/search.svg" alt="Кнопка поиска">
+                        <img width="24" height="24" src={% static 'img/search.svg' %} alt="Кнопка поиска">
                     </a>
                 </li>
                 <li class="toolbar-nav-item">
                     <a href="#">
-                        <img width="24" height="24" src="img/heart.svg" alt="Избранные">
+                        <img width="24" height="24" src={% static 'img/heart.svg' %} alt="Избранные">
                     </a>
                 </li>
                 <li class="toolbar-nav-item">
                     <a href="#">
-                        <img width="24" height="24" src="img/profile.svg" alt="Иконка пользователя">
+                        <img width="24" height="24" src={% static 'img/profile.svg' %} alt="Иконка пользователя">
                     </a>
                 </li>
                 <li class="toolbar-nav-item">
                     <a href="#">
-                        <img width="24" height="24" src="img/cart.svg" alt="Корзина покупателя">
+                        <img width="24" height="24" src={% static 'img/cart.svg' %} alt="Корзина покупателя">
                     </a>
                 </li>
             </ul>
@@ -79,15 +79,15 @@
             <div class="hero_info">
                 <h1>URAL TREATS</h1>
                 <p>Специальные цены только до 30 апреля</p>
-                <button class="hero_btn">Перейти в каталог <img src="img/vector.svg" alt=""></button>
+                <button class="hero_btn">Перейти в каталог <img src={% static 'img/vector.svg' %} alt=""></button>
             </div>
-            <img class="hero_model1" width="434" height="660" src="img/hero_model1.png" alt="">
-            <img class="hero_model2" width="434" height="660" src="img/hero_model2.png" alt="">
+            <img class="hero_model1" width="434" height="660" src={% static 'img/hero_model1.png' %} alt="">
+            <img class="hero_model2" width="434" height="660" src={% static 'img/hero_model2.png' %} alt="">
         </section>
 
         <section class="promotion">
             <div class="promotion_main">
-                <img width="784" height="357" src="img/gaba.jpg" alt="">
+                <img width="784" height="357" src={% static 'img/gaba.jpg' %} alt="">
                 <div class="promotion_info">
                     <h2>
                         GABA, 700 мг 90 капсул по 833 мг, Гамма аминомасляная кислота, способствует улучшению памяти и
@@ -100,7 +100,7 @@
                         Принимает участие в регуляторных и метаболических процессах в мозге.<br>
                         Ноотропное средство,участвует в метаболизме глюкозы и тканевом дыхании.
                     </p>
-                    <a href="#">Подробнее <img src="img/promotion_vector.svg" alt=""></a>
+                    <a href="#">Подробнее <img src={% static 'img/promotion_vector.svg' %} alt=""></a>
                 </div>
 
             </div>
@@ -128,14 +128,14 @@
             <div class="new_product_head">
                 <h2>Новинки</h2>
                 <div class="new_product_navigation">
-                    <img width="24" height="24" src="img/prev.svg" alt="">
-                    <img width="24" height="24" src="img/next.svg" alt="">
+                    <img width="24" height="24" src={% static 'img/prev.svg' %} alt="">
+                    <img width="24" height="24" src={% static 'img/next.svg' %} alt="">
                 </div>
             </div>
             <ul class="cards">
                 <li class="card">
                     <div class="card_container_img">
-                        <img width="377" height="400" src="img/Soulway.jpg" alt="Протеин Soulway">
+                        <img width="377" height="400" src={% static 'img/Soulway.jpg' %} alt="Протеин Soulway">
                     </div>
                     <div class="card_container_info">
                         <h3 class="card_title">Протеин Soulway 900 г</h3>
@@ -145,7 +145,7 @@
                 </li>
                 <li class="card">
                     <div class="card_container_img">
-                        <img width="377" height="400" src="img/PRIMECRAFT.jpg" alt="Протеин PRIMECRAFT">
+                        <img width="377" height="400" src={% static 'img/PRIMECRAFT.jpg' %} alt="Протеин PRIMECRAFT">
                     </div>
                     <div class="card_container_info">
                         <h3 class="card_title">Протеин PRIMECRAFT 900г</h3>
@@ -155,7 +155,7 @@
                 </li>
                 <li class="card">
                     <div class="card_container_img">
-                        <img width="303" height="137" src="img/Bombbar.jpg" alt="Батончик протеиновый Bombbar">
+                        <img width="303" height="137" src={% static 'img/Bombbar.jpg' %} alt="Батончик протеиновый Bombbar">
                     </div>
                     <div class="card_container_info">
                         <h3 class="card_title">Батончик протеиновый Bombbar</h3>
@@ -165,7 +165,7 @@
                 </li>
                 <li class="card">
                     <div class="card_container_img">
-                        <img width="377" height="400" src="img/SPORTINA.jpg" alt="Напиток SPORTINA">
+                        <img width="377" height="400" src={% static 'img/SPORTINA.jpg' %} alt="Напиток SPORTINA">
                     </div>
                     <div class="card_container_info">
                         <h3 class="card_title">Напиток SPORTINA</h3>
@@ -180,14 +180,14 @@
             <div class="sale_product_head">
                 <h2>Акционные товары</h2>
                 <div class="new_product_navigation">
-                    <img width="24" height="24" src="img/prev.svg" alt="">
-                    <img width="24" height="24" src="img/next.svg" alt="">
+                    <img width="24" height="24" src={% static 'img/prev.svg' %} alt="">
+                    <img width="24" height="24" src={% static 'img/next.svg' %} alt="">
                 </div>
             </div>
             <ul class="cards">
                 <li class="card">
                     <div class="sale_card_container">
-                        <img width="473" height="492" src="img/GABA_GLS.jpg" alt="Maxler Creatine">
+                        <img width="473" height="492" src={% static 'img/GABA_GLS.jpg' %} alt="Maxler Creatine">
                     </div>
                     <div class="sale_card_info">
                         <h3 class="card_title">GABA GLS</h3>
@@ -196,7 +196,7 @@
                 </li>
                 <li class="card">
                     <div class="sale_card_container">
-                        <img width="346" height="419" src="img/Maxler_Creatine.jpg" alt="Maxler Creatine">
+                        <img width="346" height="419" src={% static 'img/Maxler_Creatine.jpg' %} alt="Maxler Creatine">
                     </div>
                     <div class="sale_card_info">
                         <h3 class="card_title">Maxler Creatine</h3>
@@ -205,7 +205,7 @@
                 </li>
                 <li class="card">
                     <div class="sale_card_container">
-                        <img width="394" height="408" src="img/L-CRANITIN_SOLAB.jpg" alt="Maxler Creatine">
+                        <img width="394" height="408" src={% static 'img/L-CARNITIN_SOLAB.jpg' %} alt="Maxler Creatine">
                     </div>
                     <div class="sale_card_info">
                         <h3 class="card_title">L-CRANITIN SOLAB</h3>
@@ -219,14 +219,14 @@
             <div class="recomendation_product_head">
                 <h2>Рекомендуемые товары</h2>
                 <div class="new_product_navigation">
-                    <img width="24" height="24" src="img/prev.svg" alt="">
-                    <img width="24" height="24" src="img/next.svg" alt="">
+                    <img width="24" height="24" src={% static 'img/prev.svg' %} alt="">
+                    <img width="24" height="24" src={% static 'img/next.svg' %} alt="">
                 </div>
             </div>
             <ul class="cards">
                 <li class="card">
                     <div class="card_container_img">
-                        <img src="img/BCAA_411_COMPLEX.jpg" alt="Протеин Soulway">
+                        <img src={% static 'img/BCAA_411_COMPLEX.jpg' %} alt="Протеин Soulway">
                     </div>
                     <div class="card_container_info">
                         <h3 class="card_title">BCAA 4:1:1 COMPLEX ATECH</h3>
@@ -237,7 +237,7 @@
                 </li>
                 <li class="card">
                     <div class="card_container_img">
-                        <img src="img/BCAA_211_PRIMECRAFT.jpg" alt="BCAA 2:1:1 PRIMECRAFT">
+                        <img src={% static 'img/BCAA_211_PRIMECRAFT.jpg' %} alt="BCAA 2:1:1 PRIMECRAFT">
                     </div>
                     <div class="card_container_info">
                         <h3 class="card_title">BCAA 2:1:1 PRIMECRAFT</h3>
