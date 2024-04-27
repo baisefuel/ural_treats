@@ -3,26 +3,37 @@
 
 <head>
     <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SPORT SHOP URAL</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bellota+Text:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+
+    <title>SPORT SHOP URAL</title>
 </head>
 
 <body class="page">
     <header class="page_header">
         <div class="services">
             <div class="services_content">
-                <p>Екатеринбург</p>
-                <a href="tel:88000000000">8 800 000 00 00</a>
+                <p class="location">Екатеринбург</p>
+                <a class="telephone" href="tel:88000000000">8 800 000 00 00</a>
             </div>
         </div>
         <nav class="main-nav">
             <p class="logo">
-                <img src="img/logo.svg" alt="логотип спорт магазина урал">
+                <img width="86" height="90" src="img/logo.svg" alt="логотип спорт магазина урал">
             </p>
             <ul class="site-nav">
                 <li class="site-nav-item">
-                    <a href="#">Каталог</a>
+                    <a class="active" href="#">Каталог</a>
                 </li>
                 <li class="site-nav-item">
                     <a href="#">Сертификаты</a>
@@ -40,98 +51,122 @@
             <ul class="toolbar-nav">
                 <li class="toolbar-nav-item">
                     <a href="#">
-                        <img src="img/search.svg" alt="Кнопка поиска">
+                        <img width="24" height="24" src="img/search.svg" alt="Кнопка поиска">
                     </a>
                 </li>
                 <li class="toolbar-nav-item">
                     <a href="#">
-                        <img src="img/heart.svg" alt="Избранные">
+                        <img width="24" height="24" src="img/heart.svg" alt="Избранные">
                     </a>
                 </li>
                 <li class="toolbar-nav-item">
                     <a href="#">
-                        <img src="img/profile.svg" alt="Иконка пользователя">
+                        <img width="24" height="24" src="img/profile.svg" alt="Иконка пользователя">
                     </a>
                 </li>
                 <li class="toolbar-nav-item">
                     <a href="#">
-                        <img src="img/cart.svg" alt="Корзина покупателя">
+                        <img width="24" height="24" src="img/cart.svg" alt="Корзина покупателя">
                     </a>
                 </li>
             </ul>
         </nav>
     </header>
 
-    <main>
+    <main class="main-content">
         <section class="hero">
-            <h1>URAL TREATS</h1>
-            <p>Специальные цены только до 30 апреля</p>
-            <button>Перейти в каталог <img src="img/vector.svg" alt=""></button>
-            <img src="img/hero_model1.png" alt="">
-            <img src="img/hero_model2.png" alt="">
+            <div class="hero_info">
+                <h1>URAL TREATS</h1>
+                <p>Специальные цены только до 30 апреля</p>
+                <button class="hero_btn">Перейти в каталог <img src="img/vector.svg" alt=""></button>
+            </div>
+            <img class="hero_model1" width="434" height="660" src="img/hero_model1.png" alt="">
+            <img class="hero_model2" width="434" height="660" src="img/hero_model2.png" alt="">
         </section>
 
         <section class="promotion">
-            <img src="img/gaba.jpg" alt="">
-            <h2>
-                GABA, 700 мг 90 капсул по 833 мг, Гамма аминомасляная кислота, способствует улучшению памяти и качества
-                сна, от стресса
-            </h2>
-            <p>
-                GABA (гамма-аминомасляная кислота) – непротеиногенная аминокислота,
-                тормозной нейромедиатор центральной нервной системы.
-                Принимает участие в регуляторных и метаболических процессах в мозге. Ноотропное средство,
-                участвует в метаболизме глюкозы и тканевом дыхании.
-            </p>
-            <a href="#">Подробнее <img src="img/vector.svg" alt=""></a>
+            <div class="promotion_main">
+                <img width="784" height="357" src="img/gaba.jpg" alt="">
+                <div class="promotion_info">
+                    <h2>
+                        GABA, 700 мг 90 капсул по 833 мг, Гамма аминомасляная кислота, способствует улучшению памяти и
+                        качества
+                        сна, от стресса
+                    </h2>
+                    <p>
+                        GABA (гамма-аминомасляная кислота) – непротеиногенная аминокислота,
+                        тормозной нейромедиатор центральной нервной системы.<br>
+                        Принимает участие в регуляторных и метаболических процессах в мозге.<br>
+                        Ноотропное средство,участвует в метаболизме глюкозы и тканевом дыхании.
+                    </p>
+                    <a href="#">Подробнее <img src="img/promotion_vector.svg" alt=""></a>
+                </div>
+
+            </div>
             <ul class="promotion-list">
                 <li class="promotion-list-item">
-                    Безупречный состав и эффективность
+                    Безупречный состав<br>
+                    и эффективность
                 </li>
                 <li class="promotion-list-item">
-                    Натуральность и экологичность
+                    Натуральность и<br>
+                    экологичность
                 </li>
                 <li class="promotion-list-item">
-                    Наличный и безналичный расчет
+                    Наличный<br>
+                    и безналичный расчет
                 </li>
                 <li class="promotion-list-item">
-                    Доставка по всей России
+                    Доставка<br>
+                    по всей России
                 </li>
             </ul>
         </section>
 
         <section class="new_product">
-            <h2>Новинки</h2>
-            <img src="img/vector.svg" alt="">
-            <img src="img/vector.svg" alt="">
+            <div class="new_product_head">
+                <h2>Новинки</h2>
+                <div class="new_product_navigation">
+                    <img width="24" height="24" src="img/prev.svg" alt="">
+                    <img width="24" height="24" src="img/next.svg" alt="">
+                </div>
+            </div>
             <ul class="cards">
                 <li class="card">
-                    <img src="img/Soulway.jpg" alt="Протеин Soulway">
-                    <div>
+                    <div class="card_container_img">
+                        <img width="377" height="400" src="img/Soulway.jpg" alt="Протеин Soulway">
+                    </div>
+                    <div class="card_container_info">
                         <h3 class="card_title">Протеин Soulway 900 г</h3>
                         <p class="card_description">Клубника</p>
                         <p class="card_price">4490 руб</p>
                     </div>
                 </li>
                 <li class="card">
-                    <img src="img/PRIMECRAFT.jpg" alt="Протеин PRIMECRAFT">
-                    <div>
+                    <div class="card_container_img">
+                        <img width="377" height="400" src="img/PRIMECRAFT.jpg" alt="Протеин PRIMECRAFT">
+                    </div>
+                    <div class="card_container_info">
                         <h3 class="card_title">Протеин PRIMECRAFT 900г</h3>
                         <p class="card_description">Белый шоколад с клубникой</p>
                         <p class="card_price">3 490 руб</p>
                     </div>
                 </li>
                 <li class="card">
-                    <img src="img/Bombbar.jpg" alt="Батончик протеиновый Bombbar">
-                    <div>
+                    <div class="card_container_img">
+                        <img width="303" height="137" src="img/Bombbar.jpg" alt="Батончик протеиновый Bombbar">
+                    </div>
+                    <div class="card_container_info">
                         <h3 class="card_title">Батончик протеиновый Bombbar</h3>
                         <p class="card_description">Фисташечная меренга</p>
                         <p class="card_price">179 руб</p>
                     </div>
                 </li>
                 <li class="card">
-                    <img src="img/SPORTINA.jpg" alt="Напиток SPORTINA">
-                    <div>
+                    <div class="card_container_img">
+                        <img width="377" height="400" src="img/SPORTINA.jpg" alt="Напиток SPORTINA">
+                    </div>
+                    <div class="card_container_info">
                         <h3 class="card_title">Напиток SPORTINA</h3>
                         <p class="card_description">Апельсин, яблоко, груша</p>
                         <p class="card_price">149 руб</p>
@@ -141,27 +176,37 @@
         </section>
 
         <section class="sale_product">
-            <h2>Акционные товары</h2>
-            <img src="img/vector.svg" alt="">
-            <img src="img/vector.svg" alt="">
+            <div class="sale_product_head">
+                <h2>Акционные товары</h2>
+                <div class="new_product_navigation">
+                    <img width="24" height="24" src="img/prev.svg" alt="">
+                    <img width="24" height="24" src="img/next.svg" alt="">
+                </div>
+            </div>
             <ul class="cards">
                 <li class="card">
-                    <img src="img/Maxler_Creatine.jpg" alt="Maxler Creatine">
-                    <div>
-                        <h3 class="card_title">Креатин моногидрат</h3>
-                        <p class="card_description">Креатин моногидрат</p>
+                    <div class="sale_card_container">
+                        <img width="473" height="492" src="img/GABA_GLS.jpg" alt="Maxler Creatine">
                     </div>
-                </li>
-                <li class="card">
-                    <img src="img/GABA_GLS.jpg" alt="Maxler Creatine">
-                    <div>
+                    <div class="sale_card_info">
                         <h3 class="card_title">GABA GLS</h3>
                         <p class="card_description">Гамма-аминомасляная кислота</p>
                     </div>
                 </li>
                 <li class="card">
-                    <img src="img/L-CRANITIN_SOLAB.jpg" alt="Maxler Creatine">
-                    <div>
+                    <div class="sale_card_container">
+                        <img width="346" height="419" src="img/Maxler_Creatine.jpg" alt="Maxler Creatine">
+                    </div>
+                    <div class="sale_card_info">
+                        <h3 class="card_title">Maxler Creatine</h3>
+                        <p class="card_description">Креатин моногидрат</p>
+                    </div>
+                </li>
+                <li class="card">
+                    <div class="sale_card_container">
+                        <img width="394" height="408" src="img/L-CRANITIN_SOLAB.jpg" alt="Maxler Creatine">
+                    </div>
+                    <div class="sale_card_info">
                         <h3 class="card_title">L-CRANITIN SOLAB</h3>
                         <p class="card_description">850мг L-CARNITIN SOLAB AMINO ACID</p>
                     </div>
@@ -170,55 +215,63 @@
         </section>
 
         <section class="recomendation_product">
-            <h2>Рекомендуемые товары</h2>
-            <img src="img/vector.svg" alt="">
-            <img src="img/vector.svg" alt="">
+            <div class="recomendation_product_head">
+                <h2>Рекомендуемые товары</h2>
+                <div class="new_product_navigation">
+                    <img width="24" height="24" src="img/prev.svg" alt="">
+                    <img width="24" height="24" src="img/next.svg" alt="">
+                </div>
+            </div>
             <ul class="cards">
                 <li class="card">
-                    <img src="img/BCAA_411_COMPLEX.jpg" alt="Протеин Soulway">
-                    <div>
+                    <div class="card_container_img">
+                        <img src="img/BCAA_411_COMPLEX.jpg" alt="Протеин Soulway">
+                    </div>
+                    <div class="card_container_info">
                         <h3 class="card_title">BCAA 4:1:1 COMPLEX ATECH</h3>
                         <p class="card_description">240 капсул</p>
-                        <p class="card_price">
-                            <span>2 480 руб</span>
-                            <span class="card_price_old">3579 руб</span>
-                        </p>
+                        <p class="card_price">2 480 руб</p>
+                        <span class="card_price_old">3579 руб</span>
                     </div>
                 </li>
                 <li class="card">
-                    <img src="img/BCAA_211_PRIMECRAFT.jpg" alt="BCAA 2:1:1 PRIMECRAFT">
-                    <div>
+                    <div class="card_container_img">
+                        <img src="img/BCAA_211_PRIMECRAFT.jpg" alt="BCAA 2:1:1 PRIMECRAFT">
+                    </div>
+                    <div class="card_container_info">
                         <h3 class="card_title">BCAA 2:1:1 PRIMECRAFT</h3>
                         <p class="card_description">240 капсул</p>
                         <p class="card_price">2 480 руб</p>
                     </div>
                 </li>
                 <li class="card">
-                    <img src="img/BCAA_211.jpg" alt="BCAA 2:1:1">
-                    <div>
+                    <div class="card_container_img">
+                        <img src="img/BCAA_211.jpg" alt="BCAA 2:1:1">
+                    </div>
+                    <div class="card_container_info">
                         <h3 class="card_title">BCAA 2:1:1</h3>
                         <p class="card_description">90 капсул</p>
                         <p class="card_price">2 480 руб</p>
                     </div>
                 </li>
                 <li class="card">
-                    <img src="img/BCAA_211_instant.jpg" alt="BCAA 2:1:1 INSTANT">
-                    <div>
+                    <div class="card_container_img">
+                        <img src="img/BCAA_211_instant.jpg" alt="BCAA 2:1:1 INSTANT">
+                    </div>
+                    <div class="card_container_info">
                         <h3 class="card_title">BCAA 2:1:1</h3>
                         <p class="card_description">200 капсул</p>
-                        <p class="card_price">
-                            <span>2 480 руб</span>
-                            <span class="card_price_old">3579 руб</span>
-                        </p>
+                        <p class="card_price">2 480 руб</p>
+                        <span class="card_price_old">3579 руб</span>
                     </div>
                 </li>
             </ul>
         </section>
         <section class="mailing">
-            <img src="img/mailing_image.jpg" alt="изображение цветка">
+            <img width="789" height="557" src="img/mailing_image.jpg" alt="изображение цветка">
             <div class="mailing_content">
                 <h2>Подпишитесь на рассылку</h2>
-                <p>Узнай первым о старте скидок и специальных предложений!</p>
+                <p>Узнай первым о старте скидок и специальных  предложений!</p>
                 <form action="" method="POST">
                     <input type="email" placeholder="Введите почту">
                     <button type="submit">Подписаться</button>
@@ -229,13 +282,13 @@
     <footer class="main-footer">
         <div class="footer-container">
             <div class="footer-column">
-                <img src="img/logo.svg" alt="логотип спорт магазина урал">
+                <img width="102" height="102" src="img/logo.svg" alt="логотип спорт магазина урал">
                 <a href="tel:88000000000">8 800 000 00 00</a>
                 <a href="mailto:Sale@uraltreats.ru">Sale@uraltreats.ru</a>
                 <p>Екатеринбург, ул. Металлургов, д. 87, ТЦ “МЕГА”</p>
             </div>
             <ul class="footer-navigation-topics">
-                <li class="footer-navigation-topic">
+                <li class="footer-navigation-catalog">
                     <h2>Каталог</h2>
                     <ul class="footer-navigation">
                         <li class="footer-navigation-item">
@@ -267,7 +320,7 @@
                         </li>
                     </ul>
                 </li>
-                <li class="footer-navigation-topic">
+                <li class="footer-navigation-info">
                     <h2>Информация</h2>
                     <ul class="footer-navigation">
                         <li class="footer-navigation-item">
@@ -290,35 +343,36 @@
                         </li>
                     </ul>
                 </li>
-                <li class="footer-navigation-topic">
+                <li class="footer-navigation-social">
                     <h2>Мы в социальных сетях</h2>
-                    <ul class="footer-navigation">
+                    <ul class="footer-navigation-soc">
                         <li class="footer-navigation-item">
-                            <a href="#"><img src="img/telegram.svg" alt="ссылка на телеграмм"></a>
+                            <a class="social telegram" href="#"><img width="14" height="12" src="img/telegram.svg" alt="ссылка на телеграмм"></a>
                         </li>
                         <li class="footer-navigation-item">
-                            <a href="#"><img src="img/whatsapp.svg" alt="ссылка на ватсап"></a>
+                            <a class="social whatsapp" href="#"><img width="15" height="15" src="img/whatsapp.svg" alt="ссылка на ватсап"></a>
                         </li>
                         <li class="footer-navigation-item">
-                            <a href="#"><img src="img/vk.svg" alt="ссылка на вконтанке"></a>
+                            <a class="social vk" href="#"><img width="15" height="8" src="img/vk.svg" alt="ссылка на вконтанке"></a>
                         </li>
+                    </ul>
                 </li>
             </ul>
             <ul class="pay_systems">
                 <li class="pay_systems_item">
-                   <img src="img/mir.svg" alt="мир">
+                    <img width="53.5" height="15.5" src="img/mir.svg" alt="мир">
                 </li>
                 <li class="pay_systems_item">
-                    <img src="img/visa.svg" alt="виза">
+                    <img width="68.4" height="21" src="img/visa.svg" alt="виза">
                 </li>
                 <li class="pay_systems_item">
-                    <img src="img/webmoney.svg" alt="вебмани">
+                    <img width="42" height="41.4" src="img/webmoney.svg" alt="вебмани">
+                </li> 
+                <li class="pay_systems_item">
+                    <img width="38" height="36" src="img/yandex.svg" alt="яндекс">
                 </li>
                 <li class="pay_systems_item">
-                    <img src="img/yandex.svg" alt="яндекс">
-                </li>
-                <li class="pay_systems_item">
-                    <img src="img/master_card.svg" alt="мастер кард">
+                    <img width="65" height="39" src="img/master_card.svg" alt="мастер кард">
                 </li>
             </ul>
             <p class="copyright">© Все права защищены.</p>
