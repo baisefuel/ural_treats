@@ -13,13 +13,14 @@ class UserLoginForm(AuthenticationForm):
     username = forms.CharField()
     password = forms.CharField()
 
-class UserRegistrationForm(UserCreationForm):
 
-    first_name = forms.CharField()
-    last_name = forms.CharField()
-    username = forms.CharField()
-    email = forms.CharField()
-    password1 = forms.CharField()
+class UserRegistrationForm(UserCreationForm):
+    first_name = forms.CharField(label='Имя')
+    last_name = forms.CharField(label='Фамилия')
+    username = forms.CharField(label='Имя пользователя')
+    email = forms.EmailField(label='Email')
+    password1 = forms.CharField(label='Пароль', widget=forms.PasswordInput)
+    password2 = forms.CharField(label='Подтверждение пароля', widget=forms.PasswordInput, help_text='Введите тот же пароль, что и выше, для проверки.')
 
     class Meta:
         model = User
@@ -29,8 +30,9 @@ class UserRegistrationForm(UserCreationForm):
             "username",
             "email",
             "password1",
+            "password2",
         )
-
+    
 class ProfileForm(UserChangeForm):
     class Meta:
         model = User
@@ -39,7 +41,9 @@ class ProfileForm(UserChangeForm):
             "first_name",
             "last_name",
             "username",
-            "email",)
+            "email",
+            "password1",
+            "password2",)
 
     image = forms.ImageField(required=False)
     first_name = forms.CharField()
