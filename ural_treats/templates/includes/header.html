@@ -1,0 +1,53 @@
+{% load static %}
+<header class="page_header">
+    <div class="services">
+        <div class="services_content">
+            <p class="location">Екатеринбург</p>
+            <a class="telephone" href="tel:88000000000">8 800 000 00 00</a>
+        </div>
+    </div>
+    <nav class="main-nav">
+        <p class="logo">
+            <img width="86" height="90" src={% static 'img/logo.svg' %} alt="логотип спорт магазина урал">
+        </p>
+        <ul class="site-nav">
+            <li class="site-nav-item">
+                <a class="active" href="#">Каталог</a>
+            </li>
+            <li class="site-nav-item">
+                <a href="#">Сертификаты</a>
+            </li>
+            <li class="site-nav-item">
+                <a href="#">Доставка и Оплата</a>
+            </li>
+            <li class="site-nav-item">
+                <a href="#">Контанты</a>
+            </li>
+            <li class="site-nav-item">
+                <a href="#">Блог</a>
+            </li>
+        </ul>
+        <ul class="toolbar-nav">
+            <li class="toolbar-nav-item">
+                <a href="#">
+                    <img width="24" height="24" src={% static 'img/search.svg' %} alt="Кнопка поиска">
+                </a>
+            </li>
+            <li class="toolbar-nav-item">
+                <a href="#">
+                    <img width="24" height="24" src={% static 'img/heart.svg' %} alt="Избранные">
+                </a>
+            </li>
+            <li class="toolbar-nav-item">
+                <a href="#">
+                    <img width="24" height="24" src={% static 'img/profile.svg' %} alt="Иконка пользователя">
+                </a>
+            </li>
+            <li class="toolbar-nav-item">
+                <a href="#">
+                    <img width="24" height="24" src={% static 'img/cart.svg' %} alt="Корзина покупателя">
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
