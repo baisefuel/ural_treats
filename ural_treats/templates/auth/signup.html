@@ -6,13 +6,13 @@
     <title>Регистрация</title>
 </head>
 <body>
-  {% include 'includes/header' %}
-    <h2>Регистрация</h2>
+  {% include 'includes/header.html' %}
+  <h2>Регистрация</h2>
     <form method="post">
         {% csrf_token %}
         {{ form.as_p }}
         <button type="submit">Зарегистрироваться</button>
     </form>
-  {% include 'includes/footer' %}
+  {% include 'includes/footer.html' %}
 </body>
 </html>
