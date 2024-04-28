@@ -19,8 +19,8 @@ class UserRegistrationForm(UserCreationForm):
     last_name = forms.CharField(label='Фамилия')
     username = forms.CharField(label='Имя пользователя')
     email = forms.EmailField(label='Email')
-    password1 = forms.CharField(label='Пароль', widget=forms.PasswordInput)
-    password2 = forms.CharField(label='Подтверждение пароля', widget=forms.PasswordInput, help_text='Введите тот же пароль, что и выше, для проверки.')
+    password1 = forms.CharField(label='Пароль')
+    password2 = forms.CharField(label='Подтверждение пароля', help_text='Введите тот же пароль, что и выше, для проверки.')
 
     class Meta:
         model = User
