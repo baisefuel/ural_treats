@@ -41,29 +41,15 @@ def login(request):
     return render(request, 'users/login.html', context)
 
 
-def registration(request):
+def signup(request):
     if request.method == 'POST':
-        form = UserRegistrationForm(data=request.POST)
+        form = UserRegistrationForm(request.POST)
         if form.is_valid():
             form.save()
-
-            session_key = request.session.session_key
-
-            user = form.instance
-            auth.login(request, user)
-
-            if session_key:
-                Product.objects.filter(session_key=session_key).update(user=user)
-            messages.success(request, f"{user.username}, Вы успешно зарегистрированы и вошли в аккаунт")
-            return HttpResponseRedirect(reverse('main:index'))
+            return render(request, 'index.html')
     else:
         form = UserRegistrationForm()
-    
-    context = {
-        'title': 'Home - Регистрация',
-        'form': form
-    }
-    return render(request, 'users/registration.html', context)
+    return render(request, 'auth/signup.html', {'form': form})
 
 @login_required
 def profile(request):
