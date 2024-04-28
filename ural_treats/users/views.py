@@ -4,10 +4,8 @@ from django.db.models import Prefetch
 from django.http import HttpResponseRedirect
 from django.shortcuts import redirect, render
 from django.urls import reverse
-#from products.models import Product
-#from orders.models import Order, OrderItem
 
-from users.forms import ProfileForm, UserLoginForm, UserRegistrationForm
+from users.forms import UserRegistrationForm
 
 #def login(request):
 #    if request.method == 'POST':
@@ -46,7 +44,7 @@ def signup(request):
         form = UserRegistrationForm(request.POST)
         if form.is_valid():
             form.save()
-            return render(request, 'index.html')
+            return redirect(reverse('main:index'))
     else:
         form = UserRegistrationForm()
     return render(request, 'auth/signup.html', {'form': form})
