@@ -21,12 +21,4 @@ def search(query):
         .order_by("-rank")
     )
 
-    result = result.annotate(
-        headline=SearchHeadline(
-            "name",
-            query,
-            start_sel='<span style="background-color: white;">',
-            stop_sel="</span>",
-        )
-    )
     return result

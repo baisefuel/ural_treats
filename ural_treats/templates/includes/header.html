@@ -26,18 +26,18 @@
         </div>
     </div>
     <nav class="main-nav">
-        <p class="logo">
-            <img width="86" height="90" src={% static 'img/logo.svg' %} alt="логотип спорт магазина урал">
-        </p>
+        <a href="{% url 'main:index' %}">
+            <img width="86" height="90" src="{% static 'img/logo.svg' %}" alt="логотип спорт магазина урал">
+        </a>        
         <ul class="site-nav">
             <li class="site-nav-item">
-                <a class="active" href="#">Каталог</a>
+                <a href="#">Каталог</a>
             </li>
             <li class="site-nav-item">
                 <a href="#">Сертификаты</a>
             </li>
             <li class="site-nav-item">
-                <a href="#">Доставка и Оплата</a>
+                <a href="{%url 'main:delivery' %}">Доставка и Оплата</a>
             </li>
             <li class="site-nav-item">
                 <a href="#">Контанты</a>
@@ -58,7 +58,7 @@
                 </a>
             </li>
             <li class="toolbar-nav-item">
-                <a href="#">
+                <a href="{%url 'users:signup'%}">
                     <img width="24" height="24" src={% static 'img/profile.svg' %} alt="Иконка пользователя">
                 </a>
             </li>
