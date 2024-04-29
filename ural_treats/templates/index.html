@@ -11,7 +11,7 @@
             <div class="hero_info">
                 <h1>URAL TREATS</h1>
                 <p>Специальные цены только до 30 апреля</p>
-                <button class="hero_btn">Перейти в каталог <img src={% static 'img/vector.svg' %} alt=""></button>
+                <a href="{% url 'products:catalog' %}"><button class="hero_btn">Перейти в каталог <img src={% static 'img/vector.svg' %} alt=""></button></a>
             </div>
             <img class="hero_model1" width="434" height="660" src={% static 'img/hero_model1.png' %} alt="">
             <img class="hero_model2" width="434" height="660" src={% static 'img/hero_model2.png' %} alt="">

@@ -10,7 +10,7 @@ def catalog(request, category_slug=None):
     order_by = request.GET.get('order_by', None)
     query = request.GET.get('q', None)
     
-    if category_slug == "all":
+    if category_slug is None:
         products = Products.objects.all()
     elif query:
         products = search(query)
@@ -25,10 +25,10 @@ def catalog(request, category_slug=None):
 
     context = {
         "title": "Home - Каталог",
-        "goods": current_page,
+        "products": current_page,
         "slug_url": category_slug
     }
-    return render(request, "products/catalog.html", context)
+    return render(request, "catalog.html", context)
 
 
 def product(request, product_slug):

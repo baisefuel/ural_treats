@@ -1,0 +1,38 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="ru">
+
+{% include 'includes/header.html' %}
+
+    <main>
+        <div>
+            <div style="width: 595px; height: 229px; position: relative">
+                <div style="width: 595px; height: 229px; left: 0px; top: 0px; position: absolute; background: #F3F3F3">
+                </div>
+                <div style="left: 65px; top: 34px; position: absolute"><span
+                        style="color: #828282; font-size: 16px; font-family: Roboto; font-weight: 400; line-height: 32px; word-wrap: break-word">Магазин<br /></span><span
+                        style="color: black; font-size: 16px; font-family: Roboto; font-weight: 700; line-height: 32px; word-wrap: break-word">Екатеринбург,
+                        Улица Металлургов, д. 87, ТЦ “Мега”</span><span
+                        style="color: black; font-size: 16px; font-family: Roboto; font-weight: 400; line-height: 32px; word-wrap: break-word">
+                        <br /></span><span
+                        style="color: #F10D48; font-size: 16px; font-family: Roboto; font-weight: 400; line-height: 32px; word-wrap: break-word">UralTreatsShop.ru
+                        <br />Sale@uraltreats.ru
+                        <br /></span><span
+                        style="color: black; font-size: 18px; font-family: Roboto; font-weight: 400; line-height: 36px; word-wrap: break-word">+7
+                        800 00 00 00</span></div>
+            </div>
+            <div style="left: 650px; top: -230px; position: relative">
+            <svg width="12" height="1080" viewBox="0 0 12 1080" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="12" height="1080" fill="#ECECEC" />
+                <rect x="2" y="5.00586" width="8" height="117.136" rx="4" fill="#5C5C66" />
+              </svg>
+    
+            <img style="width: 1189px; height: 1117px" src={% static 'img/map.jpg' %} />
+        </div>
+        </div>
+    </main>
+    {% include 'includes/footer.html' %}
+
+</body>
+
+</html>

@@ -31,19 +31,19 @@
         </a>        
         <ul class="site-nav">
             <li class="site-nav-item">
-                <a href="#">Каталог</a>
+                <a href="{% url 'products:catalog' %}">Каталог</a>
             </li>
             <li class="site-nav-item">
                 <a href="#">Сертификаты</a>
             </li>
             <li class="site-nav-item">
-                <a href="{%url 'main:delivery' %}">Доставка и Оплата</a>
+                <a href="{% url 'main:delivery' %}">Доставка и Оплата</a>
             </li>
             <li class="site-nav-item">
-                <a href="#">Контанты</a>
+                <a href="{% url 'main:contacts' %}">Контанты</a>
             </li>
             <li class="site-nav-item">
-                <a href="#">Блог</a>
+                <a href="{% url 'main:blog' %}">Блог</a>
             </li>
         </ul>
         <ul class="toolbar-nav">

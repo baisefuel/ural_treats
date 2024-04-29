@@ -1,0 +1,49 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ru">
+
+{% include 'includes/header.html' %}
+
+<body>
+    <main>
+        <div class="catalog_container">
+            <div class="catalog_h2" style="color: #757575; font-size: 14px; font-family: Roboto; font-weight: 400; line-height: 28px; word-wrap: break-word">
+                Главная / Каталог
+            </div>
+            <a href="">Сортировать</a>
+            <a href="">Тип товара</a>
+            <a href="">Цена</a>
+
+            <div class="products">
+                {% for product in products %}
+                    <div class="product">
+                        <a href="{{ product.get_absolute_url }}">
+                            <img width="479" height="504" src="{{ product.image.url }}" alt="{{ product.name }}">
+                            <h3>{{ product.name }}</h3>
+                            <p>{{ product.price }} руб.</p>
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
+
+            {% if products.has_other_pages %}
+                <div class="pagination">
+                    {% if products.has_previous %}
+                        <a href="?page=1"><<</a>
+                        <a href="?page={{ products.previous_page_number }}">Предыдущая</a>
+                    {% endif %}
+                    <span class="current">Страница {{ products.number }} из {{ products.paginator.num_pages }}</span>
+                    {% if products.has_next %}
+                        <a href="?page={{ products.next_page_number }}">Следующая</a>
+                        <a href="?page={{ products.paginator.num_pages }}">>></a>
+                    {% endif %}
+                </div>
+            {% endif %}
+        </div>
+    </main>
+
+    {% include 'includes/footer.html' %}
+
+</body>
+</html>
