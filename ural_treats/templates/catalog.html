@@ -17,7 +17,7 @@
 
             <div class="products">
                 {% for product in products %}
-                    <div class="product">
+                    <div style="display: inline-block;" class="product">
                         <a href="{{ product.get_absolute_url }}">
                             <img width="479" height="504" src="{{ product.image.url }}" alt="{{ product.name }}">
                             <h3>{{ product.name }}</h3>
