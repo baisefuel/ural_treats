@@ -4,56 +4,17 @@
 
 {% include 'includes/header.html' %}
     <main class="main-content">
-        <p class="main-direction">Главная / Каталог / Протеин</p>
+        <p class="main-direction">Главная / Каталог / {{ product.category.name }}</p>
         <div class="basic-information">
-            <img width="479" height="504" src="/img/primecraftProtein.png" alt="Протеин сывороточный Праймкрафт">
+            <img width="479" height="504" src="{{ product.image.url }}" alt="{{ product.name }}">
             <div class="basic-description">
-                <h2 class="product-title">Протеин сывороточный PRIMEKRAFT Whey Protein, Капучино 900 г / 30 порций</h2>
-                <p class="vendor-code">Артикул: 19000000618</p>
-                <p class="product_volume"><span class="volume">900</span>объем / грамм</p>
-                <p class="price">1650 руб</p>
+                <h2 class="product-title">{{ product.name }}</h2>
+                <p class="price">{{ product.price }}</p>
                 <a class="product_add" href="#">Добавить в корзину</a>
             </div>
         </div>
         <div class="description">
-            <p class="description-title">Описание</p>
-            <hr>
-            <p class="description-name">WHEY CAPPUCCINO (капучино), 900 гр</p>
-            <p class="vendor-code">артикул: 19000000618</p>
-            <p class="description-full">
-                Протеиновый коктейль из смеси концентрата и изолята сывороточного белка, побочного продукта сыроделия.
-                Метод изготовления: Сырье подвергается естественной фильтрации и распылительной сушке. Эти способы
-                обработки позволяют получить полностью натуральный продукт, сохраняющий все полезные свойства.
-                Отличается оптимальным аминокислотным составом и быстрой скоростью усвоения (около двух часов).
-                Полезен и при массонаборе, и при жиросжигании, и для поддержания актуальной формы. Перед началом приема
-                рекомендуем проконсультироваться со спортивным диетологом.
-            </p>
-            <table class="description_info">
-                <tr>
-                    <th>Вкус</th>
-                    <td>Капучино</td>
-                </tr>
-                <tr>
-                    <th>Количество порций</th>
-                    <td>30</td>
-                </tr>
-                <tr>
-                    <th>Вес</th>
-                    <td>900 грамм</td>
-                </tr>
-                <tr>
-                    <th>Тип</th>
-                    <td>многокомпонентный, молочный, сывороточный изолят, сывороточный концентрат, Протеин, Сывороточный протеин</td>
-                </tr>
-                <tr>
-                    <th>Энергетическая ценность в 100 г</th>
-                    <td>Содержание жиров в 100 г продукта: 6,5 г; содержание углеводов в 100 г продукта: 10 г; калорийность на 100 г продукта: 395</td>
-                </tr>
-                <tr>
-                    <th>Форма выпуска</th>
-                    <td>Порошок</td>
-                </tr>
-            </table>            
+            {{product.description}}
         </div>
         <section class="recomendation_product">
             <div class="recomendation_product_head">
