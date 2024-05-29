@@ -1,31 +1,50 @@
-{% load static %}
-
 <!DOCTYPE html>
 <html lang="ru">
 
 {% include 'includes/header.html' %}
 
-    <main>
-        <article class="account">
-            <h1 class="account_h1 reg">Регистрация</h1>
-            <form action="" method="post" class="form">
-                <input class="form-input lastName" type="text" placeholder="Фамилия"> 
-                <input class="form-input name" type="text" placeholder="Имя"> 
-                <input class="form-input otc" type="text" placeholder="Отчество"> 
-                <input class="form-input date" type="text" placeholder="Дата рождения"> 
-                <input class="form-input mail" type="text" placeholder="Ваша почта">
-                <input class="form-input tel" type="text" placeholder="Телефон"> 
-                <input class="form-input city" type="text" placeholder="Город"> 
-                <div class="politic-container">
-                    <input class="checkbox" type="checkbox" name="" id=""><p class="politic">Я даю согласие на обработку своих персональных данных в соответсвии с 
-                    <span class="pol">Политикой в отношении обработки персональных данных</span> и <span class="pol">Пользовательским соглашением</span>.</p>
-                </div>
-                <button class="form-button reg" type="submit">Зарегистроваться</button> 
-            </form>
-        </article>
-    </main>
-    {% include 'includes/footer.html' %}
+<main>
+    <article class="account">
+        <h1 class="account_h1 reg">Регистрация</h1>
+        <form action="" method="post" class="form">
+            {% csrf_token %}
+            {{ form.non_field_errors }}
+
+            <div class="form-group">
+                <input class="form-input lastName" type="text" placeholder="Фамилия" name="last_name">
+                {{ form.last_name.errors }}
+            </div>
+            <div class="form-group">
+                <input class="form-input name" type="text" placeholder="Имя" name="first_name">
+                {{ form.first_name.errors }}
+            </div>
+            <div class="form-group">
+                <input class="form-input mail" type="email" placeholder="Ваша почта" name="email">
+                {{ form.email.errors }}
+            </div>
+            <div class="form-group">
+                <input class="form-input tel" type="text" placeholder="Телефон" name="tel">
+                {{ form.tel.errors }}
+            </div>
+            <div class="form-group">
+                <input class="form-input pass" type="password" placeholder="Пароль" name="password1">
+                {{ form.password1.errors }}
+            </div>
+            <div class="form-group">
+                <input class="form-input pass_again" type="password" placeholder="Подтверждение пароля" name="password2">
+                {{ form.password2.errors }}
+            </div>
+            <div class="politic-container">
+                <input class="checkbox" type="checkbox" name="agree" id="agree">
+                <p class="politic">Я даю согласие на обработку своих персональных данных в соответствии с 
+                <span class="pol">Политикой в отношении обработки персональных данных</span> и <span class="pol">Пользовательским соглашением</span>.</p>
+            </div>
+            <button class="form-button reg" type="submit">Зарегистрироваться</button>
+        </form>
+    </article>
+</main>
+
+{% include 'includes/footer.html' %}
 
 </body>
-
 </html>

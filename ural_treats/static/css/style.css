@@ -158,6 +158,8 @@ body {
     margin-left: 72px;
 }
 .promotion_info h2{
+    max-width: 100%;
+    overflow-wrap: break-word;
     margin: 0;
     font-size: 32px;
     line-height: 130%;
@@ -1481,7 +1483,7 @@ body {
 .form-input.name{
   margin-bottom: 40px;
 }
-.form-input.otc{
+.form-input.pass{
   margin-bottom: 52px;
 }
 .form-input.date{
@@ -1493,7 +1495,7 @@ body {
 .form-input.tel{
   margin-bottom: 21px;
 }
-.form-input.city{
+.form-input.pass_again{
   margin-bottom: 21px;
 }
 .checkbox {
@@ -1561,4 +1563,28 @@ body {
 }
 .active {
   color : #000000; 
+}
+.empty-message {
+  color: grey;
+  font-size: 1.2em; 
+  text-align: center; 
+  margin-top: 20px; 
+  font-family: 'Roboto', sans-serif; 
+  padding: 20px; 
+  border-radius: 5px; 
+}
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+.page {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+}
+.main {
+  flex: 1;
 }
