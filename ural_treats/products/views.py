@@ -1,21 +1,21 @@
-from django.shortcuts import get_list_or_404, render
+from django.shortcuts import get_list_or_404, render, get_object_or_404
 from django.core.paginator import Paginator
 from products.utils import search
-
-from .models import Products
+from .models import Products, Categories
 
 def catalog(request, category_slug=None):
-
     page = request.GET.get('page', 1)
     order_by = request.GET.get('order_by', None)
     query = request.GET.get('q', None)
-    
-    if category_slug is None:
-        products = Products.objects.all()
-    elif query:
+
+    categories = Categories.objects.all()
+
+    if query:
         products = search(query)
-    else:
+    elif category_slug:
         products = get_list_or_404(Products.objects.filter(category__slug=category_slug))
+    else:
+        products = Products.objects.all()
 
     if order_by and order_by != "default":
         products = products.order_by(order_by)
@@ -26,13 +26,13 @@ def catalog(request, category_slug=None):
     context = {
         "title": "Home - Каталог",
         "products": current_page,
-        "slug_url": category_slug
+        "categories": categories,
+        "selected_category": category_slug
     }
     return render(request, "catalog.html", context)
 
-
 def product(request, product_slug):
-    product = Products.objects.get(slug=product_slug)
+    product = get_object_or_404(Products, slug=product_slug)
 
     context = {"product": product}
 

@@ -11,15 +11,30 @@
             <div class="catalog_h2" style="color: #757575; font-size: 14px; font-family: Roboto; font-weight: 400; line-height: 28px; word-wrap: break-word">
                 Главная / Каталог
             </div>
-            <a href="">Сортировать</a>
-            <a href="">Тип товара</a>
-            <a href="">Цена</a>
+            <a href="?order_by=price">Сортировать по цене</a>
+            <a href="?order_by=name">Сортировать по имени</a>
 
-            <div class="products">
+            <div>
+                <h2>Категории</h2>
+                <ul>
+                    <li><a href="{% url 'products:catalog' %}">Все</a></li>
+                    {% for category in categories %}
+                        <li>
+                            <a href="{% url 'products:index' category.slug %}" 
+                               {% if category.slug == selected_category %}class="selected"{% endif %}>
+                               {{ category.name }}
+                            </a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            
+
+            <div class="products" style="display: flex; flex-wrap: wrap;">
                 {% for product in products %}
-                    <div style="display: inline-block;" class="product">
+                    <div class="product" style="width: 300px; margin: 10px;">
                         <a href="{{ product.get_absolute_url }}">
-                            <img width="479" height="504" src="{{ product.image.url }}" alt="{{ product.name }}">
+                            <img width="300" height="300" src="{{ product.image.url }}" alt="{{ product.name }}">
                             <h3>{{ product.name }}</h3>
                             <p>{{ product.price }} руб.</p>
                         </a>

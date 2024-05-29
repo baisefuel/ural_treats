@@ -1114,11 +1114,7 @@ body {
 .v8999_1060 {
   width: 917px;
   height: 502px;
-  background: url("/img/v8999_1060.png");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  opacity: 1;
+
   position: absolute;
   top: 605px;
   left: 889px;
@@ -1419,4 +1415,150 @@ body {
   color: #000000;
   text-decoration: underline;
   text-underline-offset: 8px;
+}
+.account {
+  margin: 0;
+  padding: 0;
+  margin-left: 393px;
+}
+.account_h1{ 
+  margin-bottom: 172px;
+  color: black;
+  font-size: 107px;
+  font-family: "Roboto";
+  font-weight: 700;
+  line-height: 200%;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+}
+.form-input {
+  height:33px;
+  width:371px;
+  margin-bottom: 38px;
+  margin-left: 364px;
+  font-size:16px;
+  font-family:Roboto;
+  line-height:150%;
+  color:#828282;
+  border: none;
+  border-bottom: 1px solid #CACACA;
+}
+.form-button {
+  margin-top: 78px;
+  margin-left: 364px;
+  margin-bottom: 48px;
+  height:53px;
+  width:377px;
+  color: white;
+  background-color: #000000;
+  font-size:16px;
+  font-family:Roboto;
+  letter-spacing:3.75px;
+  line-height:200%;
+  border: none;
+}
+.form-new {
+  margin-left: 320px;
+  margin-bottom: 293px;
+  font-size:24px;
+  font-family:Roboto;
+  line-height:200%;
+  color: #00000050;
+}
+.form-new .form-new-create {
+  color: #000000;
+  text-decoration: none;
+}
+.account_h1.reg {
+  margin-left: 234px;
+  margin-bottom: 40px;
+}
+.form-input.lastName {
+  margin-bottom: 21px;
+}
+.form-input.name{
+  margin-bottom: 40px;
+}
+.form-input.otc{
+  margin-bottom: 52px;
+}
+.form-input.date{
+  margin-bottom: 21px;
+}
+.form-input.mail{
+  margin-bottom: 21px;
+}
+.form-input.tel{
+  margin-bottom: 21px;
+}
+.form-input.city{
+  margin-bottom: 21px;
+}
+.checkbox {
+  display:block;
+  background:#000000;
+  height:20px;
+  width:20px;
+  margin-top: 8px;
+  margin-bottom: 26px;
+  margin-right: 18px;
+}
+.politic-container {
+  margin: 0;
+  display: flex;
+  margin-left: 364px;
+  margin-bottom: 38px;
+}
+.politic {
+  margin: 0;
+  font-size:12px;
+  font-family:Roboto;
+  line-height:150%;
+  width:333px;
+}
+.form-button.reg {
+  margin-top: 0;
+  margin-bottom: 196px;
+}
+.pol {
+  color : #D785A1;
+}
+.account_h1.prof {
+  padding: 0;
+  margin-top: 0;
+  margin-left: 166px;
+  margin-bottom: 56px;
+}
+.account.profile {
+  margin-top: 109px;
+  display: flex;
+  margin-left: 223px;
+}
+.profile-name {
+  margin-top: 60px;
+  width:366px;
+  font-size:32px;
+  font-family:Roboto;
+  line-height:150%;
+  margin-bottom: 70px;
+}
+.profile-list {
+  font-size:24px;
+  font-family:Roboto;
+  line-height:200%;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-left: 30px;
+}
+.form-button.prof {
+  margin-bottom: 228px;
+} 
+.profile-item {
+  color: #828282;
+}
+.active {
+  color : #000000; 
 }
