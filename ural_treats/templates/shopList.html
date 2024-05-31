@@ -6,13 +6,20 @@
     <div class="container">
         <h2>История заказов</h2>
         {% if orders %}
-            <ul>
+            <ul style="list-style: none;">
                 {% for order in orders %}
                     <li>
                         <strong>Заказ {{ order.id }} от {{ order.created_at }}</strong>
-                        <ul>
+                        <ul class="list-shop-item">
                             {% for item in order.items.all %}
-                                <li>{{ item.product.name }} - {{ item.quantity }} шт. ({{ item.price }} за шт.)</li>
+                                <li class="list-shop-item">
+                                    <img width="150" height="150" src="{{ item.product.image.url }}" alt="">
+                                    <div class="container-shop">
+                                        <h3 class="list-shop-name"> {{ item.product.name }} </h3>
+                                        <p class="list-shop-taste">Количество: {{ item.quantity }}</p>
+                                        <p class="list-shop-count">{{ item.price }} руб</p>
+                                    </div>
+                                </li>
                             {% endfor %}
                         </ul>
                         <p>Общая стоимость: {{ order.get_total_cost }} руб.</p>

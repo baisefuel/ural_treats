@@ -33,9 +33,6 @@
                 <a href="{% url 'products:catalog' %}">Каталог</a>
             </li>
             <li class="site-nav-item">
-                <a href="#">Сертификаты</a>
-            </li>
-            <li class="site-nav-item">
                 <a href="{% url 'main:delivery' %}">Доставка и Оплата</a>
             </li>
             <li class="site-nav-item">
@@ -46,16 +43,6 @@
             </li>
         </ul>
         <ul class="toolbar-nav">
-            <li class="toolbar-nav-item">
-                <a href="#">
-                    <img width="24" height="24" src={% static 'img/search.svg' %} alt="Кнопка поиска">
-                </a>
-            </li>
-            <li class="toolbar-nav-item">
-                <a href="#">
-                    <img width="24" height="24" src={% static 'img/heart.svg' %} alt="Избранные">
-                </a>
-            </li>
             <li class="toolbar-nav-item">
                 {% if user.is_authenticated %}
                     <a href="{% url 'users:profile' %}">

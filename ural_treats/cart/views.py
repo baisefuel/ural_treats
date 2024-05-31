@@ -48,4 +48,4 @@ def order_history(request):
 def remove_from_cart(request, item_id):
     cart_item = get_object_or_404(Cart, id=item_id, user=request.user)
     cart_item.delete()
-    return redirect('cart:cart')
+    return render(request, 'shoppingBasket.html, context')

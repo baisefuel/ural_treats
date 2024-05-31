@@ -8,25 +8,21 @@
         <img width="479" height="504" src="{{ product.image.url }}" alt="{{ product.name }}">
         <div class="basic-description">
             <h2 class="product-title">{{ product.name }}</h2>
-            <p class="price">{{ product.price }}</p>
             <form method="post" action="{% url 'cart:add_to_cart' product.id %}">
                 {% csrf_token %}
                 <label for="quantity">Количество:</label>
                 <input type="number" id="quantity" name="quantity" value="1" min="1" max="{{ product.quantity }}">
-                <button type="submit" class="product_add">Добавить в корзину</button>
+                <p class="price">{{ product.price }} руб</p>
+                <button type="submit" class="form-button">Добавить в корзину</button>
+                <div class="description">
+                    {{ product.description }}
+                </div>
             </form>
         </div>
-    </div>
-    <div class="description">
-        {{ product.description }}
     </div>
     <section class="recomendation_product"> 
         <div class="recomendation_product_head">
             <h2>Рекомендуемые товары</h2>
-            <div class="new_product_navigation">
-                <img width="24" height="24" src={% static 'img/prev.svg' %} alt="">
-                <img width="24" height="24" src={% static 'img/next.svg' %} alt="">
-            </div>
         </div>
         <ul class="cards">
             <li class="card">
@@ -74,10 +70,6 @@
     <section class="recomendation_product">
         <div class="recomendation_product_head">
             <h2>Похожие товары</h2>
-            <div class="new_product_navigation">
-                <img width="24" height="24" src={% static 'img/prev.svg' %} alt="">
-                <img width="24" height="24" src={% static 'img/next.svg' %} alt="">
-            </div>
         </div>
         <ul class="cards">
             <li class="card">
