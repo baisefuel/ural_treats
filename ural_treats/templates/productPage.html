@@ -1,125 +1,129 @@
-{%load static%}
+{% load static %}
 <!DOCTYPE html>
 <html lang="ru">
-
 {% include 'includes/header.html' %}
-    <main class="main-content">
-        <p class="main-direction">Главная / Каталог / {{ product.category.name }}</p>
-        <div class="basic-information">
-            <img width="479" height="504" src="{{ product.image.url }}" alt="{{ product.name }}">
-            <div class="basic-description">
-                <h2 class="product-title">{{ product.name }}</h2>
-                <p class="price">{{ product.price }}</p>
-                <a class="product_add" href="#">Добавить в корзину</a>
+<main class="main-content">
+    <p class="main-direction">Главная / Каталог / {{ product.category.name }}</p>
+    <div class="basic-information">
+        <img width="479" height="504" src="{{ product.image.url }}" alt="{{ product.name }}">
+        <div class="basic-description">
+            <h2 class="product-title">{{ product.name }}</h2>
+            <p class="price">{{ product.price }}</p>
+            <form method="post" action="{% url 'cart:add_to_cart' product.id %}">
+                {% csrf_token %}
+                <label for="quantity">Количество:</label>
+                <input type="number" id="quantity" name="quantity" value="1" min="1" max="{{ product.quantity }}">
+                <button type="submit" class="product_add">Добавить в корзину</button>
+            </form>
+        </div>
+    </div>
+    <div class="description">
+        {{ product.description }}
+    </div>
+    <section class="recomendation_product"> 
+        <div class="recomendation_product_head">
+            <h2>Рекомендуемые товары</h2>
+            <div class="new_product_navigation">
+                <img width="24" height="24" src={% static 'img/prev.svg' %} alt="">
+                <img width="24" height="24" src={% static 'img/next.svg' %} alt="">
             </div>
         </div>
-        <div class="description">
-            {{product.description}}
+        <ul class="cards">
+            <li class="card">
+                <div class="card_container_img">
+                    <img src={% static 'img/BCAA_411_COMPLEX.jpg' %} alt="Протеин Soulway">
+                </div>
+                <div class="card_container_info">
+                    <h3 class="card_title">Протеин сывороточный Soul Way</h3>
+                    <p class="card_description">900 гр 30 порций</p>
+                    <p class="card_price">1 106 руб</p>
+                </div>
+            </li>
+            <li class="card">
+                <div class="card_container_img">
+                    <img src={% static 'img/BCAA_211_PRIMECRAFT.jpg' %} alt="BCAA 2:1:1 PRIMECRAFT">
+                </div>
+                <div class="card_container_info">
+                    <h3 class="card_title">Протеин сывороточный tobePRO</h3>
+                    <p class="card_description">900 гр 30 порций</p>
+                    <p class="card_price">1 865 руб</p>
+                </div>
+            </li>
+            <li class="card">
+                <div class="card_container_img">
+                    <img src={% static 'img/BCAA_211.jpg' %} alt="BCAA 2:1:1">
+                </div>
+                <div class="card_container_info">
+                    <h3 class="card_title">Протеин PRIMEKRAFT</h3>
+                    <p class="card_description">900 гр 30 порций</p>
+                    <p class="card_price">2 480 руб</p>
+                </div>
+            </li>
+            <li class="card">
+                <div class="card_container_img">
+                    <img src={% static 'img/BCAA_211_instant.jpg' %} alt="BCAA 2:1:1 INSTANT">
+                </div>
+                <div class="card_container_info">
+                    <h3 class="card_title">Протеин сывороточный ELITE</h3>
+                    <p class="card_description">900 гр 30 порций</p>
+                    <p class="card_price">2 440 руб</p>
+                </div>
+            </li>
+        </ul>
+    </section>
+    <section class="recomendation_product">
+        <div class="recomendation_product_head">
+            <h2>Похожие товары</h2>
+            <div class="new_product_navigation">
+                <img width="24" height="24" src={% static 'img/prev.svg' %} alt="">
+                <img width="24" height="24" src={% static 'img/next.svg' %} alt="">
+            </div>
         </div>
-        <section class="recomendation_product">
-            <div class="recomendation_product_head">
-                <h2>Рекомендуемые товары</h2>
-                <div class="new_product_navigation">
-                    <img width="24" height="24" src={% static 'img/prev.svg' %} alt="">
-                    <img width="24" height="24" src={% static 'img/next.svg' %} alt="">
+        <ul class="cards">
+            <li class="card">
+                <div class="card_container_img">
+                    <img src={% static '/img/BCAA_411_COMPLEX.jpg' %} alt="Протеин Soulway">
                 </div>
-            </div>
-            <ul class="cards">
-                <li class="card">
-                    <div class="card_container_img">
-                        <img src={% static 'img/BCAA_411_COMPLEX.jpg' %} alt="Протеин Soulway">
-                    </div>
-                    <div class="card_container_info">
-                        <h3 class="card_title">Протеин сывороточный Soul Way</h3>
-                        <p class="card_description">900 гр 30 порций</p>
-                        <p class="card_price">1 106 руб</p>
-                    </div>
-                </li>
-                <li class="card">
-                    <div class="card_container_img">
-                        <img src={% static 'img/BCAA_211_PRIMECRAFT.jpg' %} alt="BCAA 2:1:1 PRIMECRAFT">
-                    </div>
-                    <div class="card_container_info">
-                        <h3 class="card_title">Протеин сывороточный tobePRO</h3>
-                        <p class="card_description">900 гр 30 порций</p>
-                        <p class="card_price">1 865 руб</p>
-                    </div>
-                </li>
-                <li class="card">
-                    <div class="card_container_img">
-                        <img src={% static 'img/BCAA_211.jpg' %} alt="BCAA 2:1:1">
-                    </div>
-                    <div class="card_container_info">
-                        <h3 class="card_title">Протеин PRIMEKRAFT</h3>
-                        <p class="card_description">900 гр 30 порций</p>
-                        <p class="card_price">2 480 руб</p>
-                    </div>
-                </li>
-                <li class="card">
-                    <div class="card_container_img">
-                        <img src={% static 'img/BCAA_211_instant.jpg' %} alt="BCAA 2:1:1 INSTANT">
-                    </div>
-                    <div class="card_container_info">
-                        <h3 class="card_title">Протеин сывороточный ELITE</h3>
-                        <p class="card_description">900 гр 30 порций</p>
-                        <p class="card_price">2 440 руб</p>
-                    </div>
-                </li>
-            </ul>
-        </section>
-        <section class="recomendation_product">
-            <div class="recomendation_product_head">
-                <h2>Похожие товары</h2>
-                <div class="new_product_navigation">
-                    <img width="24" height="24" src={% static 'img/prev.svg' %} alt="">
-                    <img width="24" height="24" src={% static 'img/next.svg' %} alt="">
+                <div class="card_container_info">
+                    <h3 class="card_title">Креатин моногидрат BioPrime</h3>
+                    <p class="card_description">200 гр / 40 порций</p>
+                    <p class="card_price">846 руб</p>
                 </div>
-            </div>
-            <ul class="cards">
-                <li class="card">
-                    <div class="card_container_img">
-                        <img src={% static '/img/BCAA_411_COMPLEX.jpg' %} alt="Протеин Soulway">
-                    </div>
-                    <div class="card_container_info">
-                        <h3 class="card_title">Креатин моногидрат BioPrime</h3>
-                        <p class="card_description">200 гр / 40 порций</p>
-                        <p class="card_price">846 руб</p>
-                    </div>
-                </li>
-                <li class="card">
-                    <div class="card_container_img">
-                        <img src={% static '/img/BCAA_211_PRIMECRAFT.jpg' %} alt="BCAA 2:1:1 PRIMECRAFT">
-                    </div>
-                    <div class="card_container_info">
-                        <h3 class="card_title">Моногидрат PRIMEKRAFT</h3>
-                        <p class="card_description">200 гр / 40 порций</p>
-                        <p class="card_price">2 480 руб</p>
-                    </div>
-                </li>
-                <li class="card">
-                    <div class="card_container_img">
-                        <img src={% static '/img/BCAA_211.jpg' %} alt="BCAA 2:1:1">
-                    </div>
-                    <div class="card_container_info">
-                        <h3 class="card_title">Креатин aTech Nutrition</h3>
-                        <p class="card_description">120 капсул</p>
-                        <p class="card_price">830 руб</p>
-                    </div>
-                </li>
-                <li class="card">
-                    <div class="card_container_img">
-                        <img src={% static '/img/BCAA_211_instant.jpg' %} alt="BCAA 2:1:1 INSTANT">
-                    </div>
-                    <div class="card_container_info">
-                        <h3 class="card_title">Креатин monohydrate</h3>
-                        <p class="card_description">120 капсул</p>
-                        <p class="card_price">527 руб</p>
-                    </div>
-                </li>
-            </ul>
-        </section>
-    </main>
-    {% include 'includes/footer.html' %}
+            </li>
+            <li class="card">
+                <div class="card_container_img">
+                    <img src={% static '/img/BCAA_211_PRIMECRAFT.jpg' %} alt="BCAA 2:1:1 PRIMECRAFT">
+                </div>
+                <div class="card_container_info">
+                    <h3 class="card_title">Моногидрат PRIMEKRAFT</h3>
+                    <p class="card_description">200 гр / 40 порций</p>
+                    <p class="card_price">2 480 руб</p>
+                </div>
+            </li>
+            <li class="card">
+                <div class="card_container_img">
+                    <img src={% static '/img/BCAA_211.jpg' %} alt="BCAA 2:1:1">
+                </div>
+                <div class="card_container_info">
+                    <h3 class="card_title">Креатин aTech Nutrition</h3>
+                    <p class="card_description">120 капсул</p>
+                    <p class="card_price">830 руб</p>
+                </div>
+            </li>
+            <li class="card">
+                <div class="card_container_img">
+                    <img src={% static '/img/BCAA_211_instant.jpg' %} alt="BCAA 2:1:1 INSTANT">
+                </div>
+                <div class="card_container_info">
+                    <h3 class="card_title">Креатин monohydrate</h3>
+                    <p class="card_description">120 капсул</p>
+                    <p class="card_price">527 руб</p>
+                </div>
+            </li>
+        </ul>
+    </section>
+</main>
+{% include 'includes/footer.html' %}
 
 </body>
 

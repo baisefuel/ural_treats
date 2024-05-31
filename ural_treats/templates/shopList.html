@@ -1,29 +1,28 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="ru">
-
 {% include 'includes/header.html' %}
-
-    <main>
-        <article class="account profile">
-            <div class="container-profile">
-                <h2 class="profile-name">{{user.first_name}}<br>users.user.last_name</h2>
-                <ul class="profile-list">
-                    <li class="profile-item">Личная информация</li>
-                    <li class="profile-item active">Мои покупки</li>
-                    <li class="profile-item">Выйти</li>
-                </ul>
-            </div>
-            <div>
-                <h1 class="account_h1 prof">Мои покупки</h1>
-                <p class="empty-message">Здесь будет ваша история покупок</p>
-                <p class="empty-message">Пока тут пусто!</p>
-            </div>
-           
-        </article>
-    </main>
-    {% include 'includes/footer.html' %}
-
-</body>
-
+<main>
+    <div class="container">
+        <h2>История заказов</h2>
+        {% if orders %}
+            <ul>
+                {% for order in orders %}
+                    <li>
+                        <strong>Заказ {{ order.id }} от {{ order.created_at }}</strong>
+                        <ul>
+                            {% for item in order.items.all %}
+                                <li>{{ item.product.name }} - {{ item.quantity }} шт. ({{ item.price }} за шт.)</li>
+                            {% endfor %}
+                        </ul>
+                        <p>Общая стоимость: {{ order.get_total_cost }} руб.</p>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>У вас нет заказов</p>
+        {% endif %}
+    </div>
+</main>
+{% include 'includes/footer.html' %}
 </html>

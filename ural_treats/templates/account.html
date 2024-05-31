@@ -1,22 +1,23 @@
-{% load static %}
-
 <!DOCTYPE html>
 <html lang="ru">
-    {% include 'includes/header.html' %}
-
-    <main>
-        <article class="account">
-            <h1 class="account_h1">Вход в личный кабинет</h1>
-            <form action="" method="post" class="form">
-                <input class="form-input" type="text" placeholder="Ваша почта"> 
-                <input class="form-input" type="password" placeholder="Ваш пароль">
-                <button class="form-button" type="submit">Войти</button>
-                <p class="form-new">Еще нет аккаунта? <a href="#" class="form-new-create">Зарегистрироваться!</a></p>
-            </form>
-        </article>
-    </main>
-    {% include 'includes/footer.html' %}
-
+{% load static %}
+{% include 'includes/header.html' %}
+<main>
+    <article class="account">
+        <h1 class="account_h1">Вход в личный кабинет</h1>
+        <form action="" method="post" class="form">
+            {% csrf_token %}
+            {% for field in form %}
+                <div class="form-group">
+                    {{ field }}
+                    {{ field.errors }}
+                </div>
+            {% endfor %}
+            <button class="form-button" type="submit">Войти</button>
+            <p class="form-new">Еще нет аккаунта? <a href="{% url 'users:signup' %}" class="form-new-create">Зарегистрироваться!</a></p>
+        </form>
+    </article>
+</main>
+{% include 'includes/footer.html' %}
 </body>
-
 </html>

@@ -1,5 +1,6 @@
 {% load static %}
-
+<!DOCTYPE html>
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -8,16 +9,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bellota+Text:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href={% static 'css/style.css' %}>
-
     <title>SPORT SHOP URAL</title>
 </head>
-
+<body>
 <header class="page_header">
     <div class="services">
         <div class="services_content">
@@ -40,7 +39,7 @@
                 <a href="{% url 'main:delivery' %}">Доставка и Оплата</a>
             </li>
             <li class="site-nav-item">
-                <a href="{% url 'main:contacts' %}">Контанты</a>
+                <a href="{% url 'main:contacts' %}">Контакты</a>
             </li>
             <li class="site-nav-item">
                 <a href="{% url 'main:blog' %}">Блог</a>
@@ -58,12 +57,16 @@
                 </a>
             </li>
             <li class="toolbar-nav-item">
-                <a href="{%url 'users:signup'%}">
+                {% if user.is_authenticated %}
+                    <a href="{% url 'users:profile' %}">
+                {% else %}
+                    <a href="{% url 'users:login' %}">
+                {% endif %}
                     <img width="24" height="24" src={% static 'img/profile.svg' %} alt="Иконка пользователя">
                 </a>
             </li>
             <li class="toolbar-nav-item">
-                <a href="#">
+                <a href="{% url 'cart:cart' %}">
                     <img width="24" height="24" src={% static 'img/cart.svg' %} alt="Корзина покупателя">
                 </a>
             </li>
