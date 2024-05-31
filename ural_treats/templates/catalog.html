@@ -11,6 +11,12 @@
             <div class="catalog_h2" style="color: #757575; font-size: 14px; font-family: Roboto; font-weight: 400; line-height: 28px; word-wrap: break-word">
                 Главная / Каталог
             </div>
+            
+            <form method="get" action="{% url 'products:catalog' %}" class="search-form">
+                <input type="text" name="q" placeholder="Поиск товаров..." value="{{ request.GET.q }}">
+                <button type="submit"><img src="{% static 'img/search.svg' %}" alt="Поиск"></button>
+            </form>
+
             <a href="?order_by=price">Сортировать по цене</a>
             <a href="?order_by=name">Сортировать по имени</a>
 
